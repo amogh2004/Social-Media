@@ -6,6 +6,7 @@ import { SignupComponent } from './home/signup/signup.component';
 import { AddpostComponent } from './home/addpost/addpost.component';
 import { UserinfoComponent} from './home/userinfo/userinfo.component';
 import { AuthGuard } from './guards/auth-guard.service';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
 {path:'',redirectTo:'home',pathMatch:'full'},
@@ -13,7 +14,8 @@ const routes: Routes = [
 {path:'signin',component:SigninComponent},
 {path:'signup',component:SignupComponent},
 {path:'addpost',component:AddpostComponent},
-{path:'userinfo',component:UserinfoComponent}
+{path:'userinfo',component:UserinfoComponent},
+{path:'**',component:NotFoundComponent}
 ];
 
 @NgModule({

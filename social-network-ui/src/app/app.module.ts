@@ -14,6 +14,7 @@ import { UserdetailsComponent } from './home/userdetails/userdetails.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UserinfoComponent } from './home/userinfo/userinfo.component';
 import { AuthGuard } from "./guards/auth-guard.service";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthGuard } from "./guards/auth-guard.service";
     AddpostComponent,
     ReadpostComponent,
     UserdetailsComponent,
-    UserinfoComponent
+    UserinfoComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
