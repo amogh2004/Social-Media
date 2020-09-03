@@ -1,12 +1,13 @@
+
 const express = require('express');
 const db =require('../config/db');
 const UserModel = db.socialNWDB;
+const bcrypt = require("bcrypt");
+const saltRounds=10;
 const router = express.Router();
-//const bcrypt=require('bcrypt');
-//const saltRounds=10;
-//     router.get('/',(req,res)=>{
-//     res.send('auth route connection established')
-// })
+    router.get('/',(req,res)=>{
+    res.send('auth route connection established')
+})
 
 //method:post
 //desc:to add users
@@ -16,11 +17,11 @@ router.post('/signup',(req,res)=>{
     //1. collect data from req
     let reqname = req.body.name;
     let reqemail= req.body.email;
-    let reqpassword = req.body.password;
+    let reqpasssword = req.body.password;
     let reqinsta_name=req.body.insta_name;
     let reqcountry=req.body.country;
     let reqbio=req.body.bio;
-    //let reqnewpassword=bcrypt.hashSync(reqpassword,saltRounds);
+    let reqnewpassword=bcrypt.hashSync(reqpasssword,saltRounds);
     let requser_image;
     if(req.body.user_image)
     {
@@ -34,7 +35,7 @@ router.post('/signup',(req,res)=>{
     UserModel.user.create({
         name : reqname,
         email : reqemail,
-        passsword : reqpassword,
+        passsword : reqnewpassword,
         insta_id : reqinsta_name,
         country : reqcountry,
         bio : reqbio,
@@ -45,8 +46,7 @@ router.post('/signup',(req,res)=>{
         res.send({
             message: "user added successfully",
             status : 200,
-            email : reqemail,
-            user_image : requser_image
+            email : reqemail
         })
     })
     //4. if data not added inform
@@ -67,14 +67,13 @@ router.post('/signin',(req,res)=>{
 
     const req_email = req.body.email;
     const req_password = req.body.password;
-   
-    UserModel.user.findOne({where: {
-        email : req_email,
-        passsword : req_password
-    },raw:true})
+    
+
+    UserModel.user.findByPk(req_email) 
+    
     .then((usersdata)=>{
-        
-        if(usersdata)
+        console.log(usersdata.passsword)
+        if(bcrypt.compareSync(req_password,usersdata.passsword)==true)
         {
             res.send({
                 message: "user signin successfull",
@@ -92,7 +91,8 @@ router.post('/signin',(req,res)=>{
     .catch((err)=>{
         res.send({
             message : "user not able to sign in",
-            status : 500
+            status : 500,
+            
         })
     })
       
