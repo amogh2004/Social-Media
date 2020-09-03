@@ -1,4 +1,4 @@
-# Social Network
+# Social Media
 
 ## Requirements
 * [Node.js](https://nodejs.org/en/)
