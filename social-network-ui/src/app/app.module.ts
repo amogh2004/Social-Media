@@ -13,6 +13,8 @@ import { ReadpostComponent } from './home/readpost/readpost.component';
 import { UserdetailsComponent } from './home/userdetails/userdetails.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UserinfoComponent } from './home/userinfo/userinfo.component';
+import { AuthGuard } from "./guards/auth-guard.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,7 @@ import { UserinfoComponent } from './home/userinfo/userinfo.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

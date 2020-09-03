@@ -5,6 +5,7 @@ import { SigninComponent } from './home/signin/signin.component';
 import { SignupComponent } from './home/signup/signup.component';
 import { AddpostComponent } from './home/addpost/addpost.component';
 import { UserinfoComponent} from './home/userinfo/userinfo.component';
+import { AuthGuard } from './guards/auth-guard.service';
 
 const routes: Routes = [
 {path:'',redirectTo:'home',pathMatch:'full'},
@@ -17,6 +18,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { canActivate: [AuthGuard] }
