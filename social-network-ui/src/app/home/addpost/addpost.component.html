@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header center">
+        Add your Awesome Post
+    </div>
+    <div class="card-body">
+        <form #postForm="ngForm"  (ngSubmit)="submitPost(postForm)" enctype="multipart/form-data">
+            <label for="inputLocation" class="">Location Name</label>
+                <div>
+                    <input type="text" name="locName" ngModel #locName="ngModel" class="form-control" id="inputLocation">
+                </div>
+                        
+            <label for="inputDescription" class="">Description</label>
+                <div>
+                    <input type="text" name="locDesc" ngModel #locDesc="ngModel" class="form-control" id="inputDescription" >
+                </div>
+            <div class="c">
+                <p>Add Your Awesome Photos</p>
+            </div>
+            <div> 
+                <input (change)="updateImage($event)" type="file" name="locFile" ngModel #locFile="ngModel"  id="upload-image-id" class="margin" >
+            </div>
+
+            <div class="center m">
+                <button type="submit" class="btn btn-success">Submit post</button>
+            </div>
+            <div *ngIf="postError"  class="fontt">{{postError}}</div>
+        </form>              
+    </div>
+</div>
