@@ -19,7 +19,7 @@ node server.js
 <span>
   <img src="https://github.com/amogh2004/Social-Media/blob/master/images/SignUp.jpeg" alt="SignUp" width="600" height="300">
 </span><br />
-                                                                                                                           
+<hr>                                                                                                                           
 <span>
   <img src="https://github.com/amogh2004/Social-Media/blob/master/images/SignIn.jpeg" alt="SignIn" width="600" height="300">
 </span><br />
