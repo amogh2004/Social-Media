@@ -23,15 +23,15 @@ node server.js
 <span>
   <img src="https://github.com/amogh2004/Social-Media/blob/master/images/SignIn.jpeg" alt="SignIn" width="600" height="300">
 </span><br />
-                                                                                                                           
+<hr>                                                                                                                         
 <span>
   <img src="https://github.com/amogh2004/Social-Media/blob/master/images/HomePage.jpeg" alt="HomePage" width="600" height="300">
 </span><br />
-                                                                                                                           
+<hr>                                                                                                                            
  <span>
   <img src="https://github.com/amogh2004/Social-Media/blob/master/images/AddPost.jpeg" alt="AddPost" width="600" height="300">
 </span><br /> 
-       
+<hr>        
 <span>
   <img src="https://github.com/amogh2004/Social-Media/blob/master/images/UserDetails.jpeg" alt="UserDetails" width="600" height="300">
 </span><br />       
